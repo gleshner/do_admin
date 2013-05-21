@@ -1,0 +1,39 @@
+<h1>Listing presenters</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Website</th>
+    <th>Fetlife</th>
+    <th>Twitter</th>
+    <th>10 Word</th>
+    <th>Full Bio</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @presenters.each do |presenter| %>
+  <tr>
+    <td><%= link_to presenter.nameFirst, presenter %></td>
+    <td><%= presenter.email %></td>
+    <td><%= presenter.phone %></td>
+    <td><%= presenter.website %></td>
+    <td><%= presenter.fetlife %></td>
+    <td><%= presenter.twitter %></td>
+    <td><%= if (presenter.shortDescrip) then 'Yes' end %></td>
+    <td><%= if (presenter.bio) then 'Yes' end %></td>
+    <td><%= presenter.image %></td>
+    <td><%= link_to 'Show', presenter %></td>
+    <td><%= link_to 'Edit', edit_presenter_path(presenter) %></td>
+    <td><%= link_to 'Destroy', presenter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Presenter', new_presenter_path %>

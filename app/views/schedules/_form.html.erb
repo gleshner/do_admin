@@ -1,0 +1,29 @@
+<%= form_for(@schedule) do |f| %>
+  <% if @schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+      <% @schedule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :classDate %><br />
+    <%= f.date_select :classDate %>
+  </div>
+  <div class="field">
+    <%= f.label :startTime %><br />
+    <%= f.time_select :startTime %>
+  </div>
+  <div class="field">
+    <%= f.label :endTime %><br />
+    <%= f.time_select :endTime %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

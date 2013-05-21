@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @workshop.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @workshop.description %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @workshop.level %>
+</p>
+
+<%= link_to 'Edit', edit_workshop_path(@workshop) %> |
+<%= link_to 'Back', workshops_path %>

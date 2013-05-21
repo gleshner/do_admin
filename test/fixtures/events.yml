@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  e_name: MyString
+  startDate: 2013-05-19
+  duration: 1
+
+two:
+  e_name: MyString
+  startDate: 2013-05-19
+  duration: 1

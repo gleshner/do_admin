@@ -1,0 +1,53 @@
+<h1>Listing presenters</h1>
+
+<table>
+  <tr>
+    <th>Namefirst</th>
+    <th>Namelast</th>
+    <th>Namealias</th>
+    <th>Email</th>
+    <th>Privateemail</th>
+    <th>Phone</th>
+    <th>Website</th>
+    <th>Fetlife</th>
+    <th>Twitter</th>
+    <th>Facebook</th>
+    <th>Google</th>
+    <th>Shortdescrip</th>
+    <th>Bio</th>
+    <th>Shirtsize</th>
+    <th>New</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @presenters.each do |presenter| %>
+  <tr>
+    <td><%= presenter.nameFirst %></td>
+    <td><%= presenter.nameLast %></td>
+    <td><%= presenter.nameAlias %></td>
+    <td><%= presenter.email %></td>
+    <td><%= presenter.privateEmail %></td>
+    <td><%= presenter.phone %></td>
+    <td><%= presenter.website %></td>
+    <td><%= presenter.fetlife %></td>
+    <td><%= presenter.twitter %></td>
+    <td><%= presenter.facebook %></td>
+    <td><%= presenter.google %></td>
+    <td><%= presenter.shortDescrip %></td>
+    <td><%= presenter.bio %></td>
+    <td><%= presenter.shirtSize %></td>
+    <td><%= presenter.new %></td>
+    <td><%= presenter.image %></td>
+    <td><%= link_to 'Show', presenter %></td>
+    <td><%= link_to 'Edit', edit_presenter_path(presenter) %></td>
+    <td><%= link_to 'Destroy', presenter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Presenter', new_presenter_path %>

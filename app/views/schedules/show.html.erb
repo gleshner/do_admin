@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Classdate:</b>
+  <%= @schedule.classDate %>
+</p>
+
+<p>
+  <b>Starttime:</b>
+  <%= @schedule.startTime %>
+</p>
+
+<p>
+  <b>Endtime:</b>
+  <%= @schedule.endTime %>
+</p>
+
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

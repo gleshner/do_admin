@@ -1,0 +1,35 @@
+<h1>Listing things</h1>
+
+<table>
+  <tr>
+    <th>Event ID</th>
+    <th>Event Name</th>
+    <th>Workshop</th>
+    <th>Presenter</th>
+    <th>Classdate</th>
+    <th>Starttime</th>
+    <th>Endtime</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @things.each do |thing| %>
+  <tr>
+    <td><%= thing.event_id %></td>
+    <td><%= Event.find(thing.event_id).e_name %></td>
+    <td><%= thing.workshop_id %></td>
+    <td><%= thing.presenter_id %></td>
+    <td><%= thing.classDate %></td>
+    <td><%= thing.startTime %></td>
+    <td><%= thing.endTime %></td>
+    <td><%= link_to 'Show', thing %></td>
+    <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
+    <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Thing', new_thing_path %>
